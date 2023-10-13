@@ -3,11 +3,11 @@
 export default function ItemCard(props){
 
     return (
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{props.title}</h5>
-                <h6 class="card-title">{props.cuisine}</h6>
-                <p class="card-text">{props.description}</p>
+        <div className="card" style="width: 18rem;">
+            <div className="card-body">
+                <h5 className="card-title">{props.title}</h5>
+                <h6 className="card-title">{props.cuisine}</h6>
+                <p className="card-text">{props.description}</p>
             </div>
         </div>
     )

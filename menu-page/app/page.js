@@ -26,7 +26,7 @@ export default function Home() {
 
 
   function checkCallback(e){
-    let temp = checkedItems;
+    let temp = [...checkedItems];
     if (temp.includes(e.target.id)){
       for(let item in temp){ 
         if (temp[item] === e.target.id) { 
