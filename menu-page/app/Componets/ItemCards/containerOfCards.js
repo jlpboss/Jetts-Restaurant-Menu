@@ -4,18 +4,30 @@ export default function ContainerOfCards(props){
 
     let checkedItemsCardArray=[];
     props.goodItems.forEach((item,index)=>{
-        //if(index % 3 === 0) {checkedItemsCardArray.push( <div className="row justify-content-evenly">)}
+        if(index % 3 === 0) {
         checkedItemsCardArray.push( 
-            <ItemCard 
-                title={item.title}
-                cuisine={item.cuisine_type}
-                description={item.description}
-            />)
-        //if(index % 3 === 2) {checkedItemsCardArray.push( </div>)}
+            <div className="row justify-content-evenly">
+                <ItemCard 
+                    title={item.title}
+                    cuisine={item.cuisine_type}
+                    description={item.description}
+                />
+                <ItemCard 
+                    title={props.goodItems[index + 1].title}
+                    cuisine={props.goodItems[index + 1].cuisine_type}
+                    description={props.goodItems[index + 1].description}
+                />
+                <ItemCard 
+                    title={props.goodItems[index + 2].title}
+                    cuisine={props.goodItems[index + 2].cuisine_type}
+                    description={props.goodItems[index + 2].description}
+                />
+        </div>
+        )}
     })
 
     return(
-        <div class="container">
+        <div className="container">
             {checkedItemsCardArray}
         </div>
     )
