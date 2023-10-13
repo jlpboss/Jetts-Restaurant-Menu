@@ -1,0 +1,18 @@
+
+
+export default function CatagoryButton(props){
+//props.checkedItems.includes(props.text)
+console.log(props.checkedItems)
+console.log(props.checkedItems.includes(props.text))
+    return (
+        <>
+            <input 
+            type="checkbox" 
+            id={props.text} 
+            checked={props.checkedItems.includes(props.text) ? "checked" : ""} 
+            onChange={props.checkHandler}
+            />
+            <label htmlFor="checkbox">{props.text}</label>
+        </>
+    )
+}
