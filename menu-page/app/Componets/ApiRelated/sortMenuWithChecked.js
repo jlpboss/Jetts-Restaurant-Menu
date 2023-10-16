@@ -5,8 +5,8 @@ export default function sortMenuWithChecked(menu, checkedItems){
 
 
     //this should be a not empty
-    if (menu == []){
-        for (item of menu){
+    if (menu.length > 0){
+        for (let item of menu){
             if(checkedItems.includes(item.category)){
                 out.push(item)
             }

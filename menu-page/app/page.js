@@ -10,18 +10,31 @@ import makeApiCall from "./Componets/ApiRelated/makeApiCall"
 
 export default function Home() {
   let [checkedItems, setcheckedItems] = useState([])
+  let [fullMenu, setFullMenu] = useState([])
+  let [currMenu, setCurrMenu] = useState([])
 
-  //console.log(checkedItems)
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await makeApiCall();
+        setFullMenu(response.data); // Set data from the response to fullMenu
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  }, []);
 
-  let fullMenu = makeApiCall()
 
   console.log(fullMenu)
 
-  let currMenu = []
-  
+
   useEffect(() => {
-  currMenu = sortMenuWithChecked(fullMenu.data, checkedItems)
-  }, [fullMenu])
+    if (fullMenu != undefined){
+      setCurrMenu(sortMenuWithChecked(fullMenu, checkedItems))
+    }
+  }, [checkedItems])
+
 
 
 
@@ -43,21 +56,13 @@ export default function Home() {
     setcheckedItems(temp)
   }
 
-  useEffect(() => {
-    console.log("page rendered on checkedItems change")
-    console.log(checkedItems);
+  // useEffect(() => {
+  //   console.log("page rendered on checkedItems change")
+  //   console.log(checkedItems);
 
-  }, [checkedItems])
+  // }, [checkedItems])
 
-  useEffect(() => {
-    console.log("page rendered on load")
-    console.log(checkedItems);
 
-  }, [])
-  
-  function componentDidUpdate(p){
-    console.log(p);
-  }
 
   return (
     <>

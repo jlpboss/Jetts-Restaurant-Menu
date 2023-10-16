@@ -2,8 +2,6 @@
 
 export default function CatagoryButton(props){
 //props.checkedItems.includes(props.text)
-console.log(props.checkedItems)
-console.log(props.checkedItems.includes(props.text))
     return (
         <>
             <input 
