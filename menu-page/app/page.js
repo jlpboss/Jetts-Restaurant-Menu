@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react"
 import ContainerOfCards from "./Componets/ItemCards/containerOfCards"
 import sortMenuWithChecked from "./Componets/ApiRelated/sortMenuWithChecked"
 import makeApiCall from "./Componets/ApiRelated/makeApiCall"
+import styles from "./page.module.css"
 
 export default function Home() {
   let [checkedItems, setcheckedItems] = useState([])

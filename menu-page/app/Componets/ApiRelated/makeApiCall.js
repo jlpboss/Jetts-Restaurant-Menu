@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default async function makeApiCall() {
     try {
-        const response = await axios.get('https://www.jsonkeeper.com/b/MDXW');
+        const response = await axios.get('http://localhost:8000/menu-items/all');
         return response;
     } catch (error) {
         console.error(error);
